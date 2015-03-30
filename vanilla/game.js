@@ -306,13 +306,6 @@
             var halfX = this.size.x / 2,
                 halfY = this.size.y / 2;
 
-            // stage.fillRect(
-            //     this.center.x - this.size.x / 2, 
-            //     this.center.y - this.size.y / 2,
-            //     this.size.x,
-            //     this.size.y
-            // );
-
             stage.beginPath();
             stage.moveTo(this.center.x, this.center.y - halfY);
             stage.lineTo(this.center.x - halfX, this.center.y + halfY);
