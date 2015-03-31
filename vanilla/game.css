@@ -18,26 +18,30 @@ img {
 }
 
 .content {
-    width: 310px;
-    margin: 0 auto;
-    /*background-image: url(../assets/arcade-cabinet.jpg);*/
+    height            : 1016px;
+    width             : 646px;
+    background-repeat : no-repeat;
+    background-size   : contain;
+    margin            : 0 auto;
+    background-image  : url(../assets/arcade-cabinet.jpg);
 }
 
 .content h1, .content h2 {
     width      : 100%;
-    text-align :center;
+    text-align : center;
+    margin     : 0;
 }
 
 canvas {
-    border : 1px solid #999;    
+      margin : 240px 0 0 150px;  
 }
 
 #game-over {
-    color   : #C00;
+    color   : #B00;
     display : none;
 }
 
 #you-win {
-    color   :#0C0;
-    display :none;
+    color   : #090;
+    display : none;
 }

@@ -222,7 +222,7 @@
         },
 
         updatePatrolDir: function() {
-            if (this.leftMostInvader.center.x < 30 || this.rightMostInvader.center.x > 280) {
+            if (this.leftMostInvader.center.x < 30 || this.rightMostInvader.center.x > this.stage.canvas.width - 30) {
                 this.patrolDir = -this.patrolDir;
             }
         },
