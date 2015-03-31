@@ -1,0 +1,43 @@
+body {
+    background-color       : #000;
+    font-family            : 'Roboto', 'Proxima Nova', 'Helvetica Neue' !important;
+    overflow               : hidden;
+    color                  : #9290A2;
+    -webkit-font-smoothing : subpixel-antialiased;
+    font-smoothing         : subpixel-antialiased;
+}
+
+a {
+    text-decoration : none;
+    color           : #673AB7; 
+}
+
+img {
+    max-width : 100%;
+    height    : auto; 
+}
+
+.content {
+    width: 310px;
+    margin: 0 auto;
+    /*background-image: url(../assets/arcade-cabinet.jpg);*/
+}
+
+.content h1, .content h2 {
+    width      : 100%;
+    text-align :center;
+}
+
+canvas {
+    border : 1px solid #999;    
+}
+
+#game-over {
+    color   : #C00;
+    display : none;
+}
+
+#you-win {
+    color   :#0C0;
+    display :none;
+}

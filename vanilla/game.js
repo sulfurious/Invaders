@@ -15,6 +15,9 @@
             canvas = document.getElementById(canvasId);
             
         this.stage = canvas.getContext('2d');
+        this.stage.fillStyle   = this.drawColor;
+        this.stage.strokeStyle = this.drawColor;
+
         this.keyboard = new Keyboard();
 
         // create the player
@@ -27,7 +30,7 @@
         this.bodies = this.bodies.concat( this.createShields() );
 
         // load sounds and start the game loop when loaded
-        this.loadSound('shoot.wav', function(shootSound) {
+        this.loadSound('../assets/shoot.wav', function(shootSound) {
             me.shootSound = shootSound;
             me.gameLoop.call(me);
         });
@@ -38,6 +41,7 @@
         leftMostInvader  : undefined,
         rightMostInvader : undefined,
         patrolDir        : 1,
+        drawColor        : '#FFF',
 
         gameLoop: function() {
             this.update();
@@ -59,7 +63,7 @@
 
             // check if the player was destroyed
             if (this.isGameOver()) {
-                this.endGame('gameOver');
+                this.endGame('game-over');
 
             // call the update method on each game body
             } else {
@@ -73,7 +77,7 @@
 
             // check if the player won
             if (this.hasPlayerWon()) {
-                this.endGame('youWin');
+                this.endGame('you-win');
             }
         },
 

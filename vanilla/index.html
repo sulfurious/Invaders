@@ -1,15 +1,20 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>Invaders</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="game.css">
 </head>
 
 <body>
-    <h1 style="width:310; text-align:center;">Invaders</h1>
-    <canvas id="stage" width="310" height="310" style="border:1px solid #999;"></canvas>
-    <h2 style="width:310; text-align:center; color:#a00; display:none;" id="gameOver">Game Over</h2>
-    <h2 style="width:310; text-align:center; color:#0a0; display:none;" id="youWin">You Win!</</body>
+    <div class="content">
+        <h1 class="title">Invaders</h1>
+        <canvas id="stage" width="310" height="310"></canvas>
+        <h2 id="game-over">Game Over</h2>
+        <h2 id="you-win">You Win!</h2>
+    </div>
+</body>
 
 <script src="game.js"></script>
 
