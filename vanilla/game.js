@@ -145,13 +145,17 @@
         createShields: function() {
             var stageSizeX = this.stage.canvas.width,
                 centerY = this.stage.canvas.height - 40,
+                noOfShields = 4,
+                offsetX = 40,
+                availWidth = stageSizeX - (offsetX * 2),
+                spacing = availWidth / (noOfShields - 1),
                 shields = [],
                 shield;
 
-            for (i=0; i<3; i++) {
+            for (i=0; i<4; i++) {
                 shield = new Shield({
                     center: {
-                        x: (60 - (60 * i)) + ((stageSizeX / 2) * i),
+                        x: offsetX + (i * spacing),
                         y: centerY
                     }
                 });
@@ -163,13 +167,16 @@
 
         // create the initial set of invaders - X columns by X rows
         createInvaders: function() {
-            var invaders = [];
+            var invaders = [],
+                rows  = 4,
+                cols  = 11,
+                count = rows * cols;
 
-            for (var i=0; i<24; i++) {
+            for (var i=0; i<count; i++) {
                 invaders.push(new Invader(this, {
                     center: {
-                        x: 30 + (i % 8) * 30, // 8 per row
-                        y: 30 + (i % 3) * 30  // 3 columns
+                        x: 20 + (i % cols) * 25,
+                        y: 20 + (i % rows) * 25
                     }
                 }));
             }
@@ -222,7 +229,7 @@
         },
 
         updatePatrolDir: function() {
-            if (this.leftMostInvader.center.x < 30 || this.rightMostInvader.center.x > this.stage.canvas.width - 30) {
+            if (this.leftMostInvader.center.x < this.leftMostInvader.size.x || this.rightMostInvader.center.x > this.stage.canvas.width - this.rightMostInvader.size.x) {
                 this.patrolDir = -this.patrolDir;
             }
         },
@@ -473,16 +480,14 @@
 
     Shield.prototype = {
         pattern: [
+            [0,1,1,1,1,1,1,1,1,0],
             [1,1,1,1,1,1,1,1,1,1],
             [1,1,1,1,1,1,1,1,1,1],
             [1,1,1,1,1,1,1,1,1,1],
-            [1,1,1,1,1,1,1,1,1,1],
-            [1,1,1,1,1,1,1,1,1,1],
-            [1,1,1,1,0,0,1,1,1,1],
             [1,1,1,0,0,0,0,1,1,1],
-            [1,1,1,0,0,0,0,1,1,1],
-            [1,1,1,0,0,0,0,1,1,1],
-            [1,1,1,0,0,0,0,1,1,1]
+            [1,1,0,0,0,0,0,0,1,1],
+            [1,1,0,0,0,0,0,0,1,1],
+            [1,1,0,0,0,0,0,0,1,1]
         ]
     };
 
