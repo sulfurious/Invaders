@@ -1,5 +1,5 @@
 /**
- * Modus Invaders
+ * Invaders
  * 
  * Based on the talk by Mary Rose Cook at Front-Trends 2014
  * https://vimeo.com/105955605
